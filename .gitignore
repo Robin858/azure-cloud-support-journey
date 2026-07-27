@@ -1,0 +1,6 @@
+evidence/
+*.log
+*.tmp
+.env
+*.pem
+*.key
