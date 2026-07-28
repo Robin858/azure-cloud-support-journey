@@ -1,0 +1,88 @@
+warning: in the working copy of 'labs/day-01/README.md', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/labs/day-01/README.md b/labs/day-01/README.md[m
+[1mindex aee7e27..acfddfc 100644[m
+[1m--- a/labs/day-01/README.md[m
+[1m+++ b/labs/day-01/README.md[m
+[36m@@ -18,12 +18,79 @@[m [mlearning and internal development.[m
+ No workload resources were deployed during this lab.[m
+ [m
+ ## Commands used[m
+[31m-[m
+[31m-Commands will be added after completing the lab.[m
+[32m+[m[32m***[m
+[32m+[m[32mLogin[m
+[32m+[m[32maz version[m
+[32m+[m[32maz --help[m
+[32m+[m[32maz account --help[m
+[32m+[m[32maz login[m
+[32m+[m
+[32m+[m[32m***[m
+[32m+[m[32mVer cuenta[m
+[32m+[m[32maz account show --output table[m
+[32m+[m[32maz account list --output table[m
+[32m+[m[32maz account show[m
+[32m+[m[32maz account show --output table[m
+[32m+[m[32maz account show `[m
+[32m+[m[32m  --query "{Subscription:name, State:state, IsDefault:isDefault}" `[m
+[32m+[m[32m  --output table[m
+[32m+[m[32maz account list-locations `[m
+[32m+[m[32m  --query "[].{Name:name,DisplayName:displayName}" `[m
+[32m+[m[32m  --output table[m
+[32m+[m
+[32m+[m[32m***[m
+[32m+[m[32mCiclo de vida de Grupos de Recursos[m
+[32m+[m[32maz group create `[m
+[32m+[m[32m  --name rg-cloudjourney-dev-001 `[m
+[32m+[m[32m  --location eastus `[m
+[32m+[m[32m  --tags Environment=Lab Owner=Robin Project=CloudSupportJourney CostCenter=Learning[m
+[32m+[m[32maz group show `[m
+[32m+[m[32m  --name rg-cloudjourney-dev-001 `[m
+[32m+[m[32m  --output table[m
+[32m+[m[32maz group show `[m
+[32m+[m[32m  --name rg-cloudjourney-dev-001 `[m
+[32m+[m[32m  --query "{Name:name,Location:location,State:properties.provisioningState}" `[m
+[32m+[m[32m  --output table[m
+[32m+[m[32m***[m
+[32m+[m[32mEtiquetas de recursos[m
+[32m+[m[32maz tag update `[m
+[32m+[m[32m  --resource-id $resourceGroupId `[m
+[32m+[m[32m  --operation Merge `[m
+[32m+[m[32m  --tags ExpirationDate=2026-07-28[m
+[32m+[m[32maz tag update --operation Merge agrega o actualiza tags conservando las existentes. En cambio, az tag create puede reemplazar el conjunto completo de tags, una diferencia peligrosa en automatizaciones.[m
+[32m+[m
+[32m+[m[32m***[m
+[32m+[m[32mEliminar Resource Group[m
+[32m+[m[32maz group delete `[m
+[32m+[m[32m  --name rg-cloudjourney-dev-001 `[m
+[32m+[m[32m  --yes[m
+[32m+[m
+[32m+[m[32maz group exists --name rg-cloudjourney-dev-001[m
+ [m
+ ## Troubleshooting[m
+ [m
+[31m-To be completed.[m
+[32m+[m[32mTitle: Invalid resource group query[m
+[32m+[m[32mSeverity: SEV-4[m
+[32m+[m[32mImpact: No customer impact[m
+[32m+[m[32mAssigned team: Cloud Operations[m
+[32m+[m
+[32m+[m[32m***[m
+[32m+[m[32mPrompt[m
+[32m+[m[32mEjecuta intencionalmente:[m
+[32m+[m[32maz group show `[m
+[32m+[m[32m  --name rg-cloudjourney-prod-001 `[m
+[32m+[m[32m  --output table[m
+[32m+[m
+[32m+[m[32m***[m
+[32m+[m[32mError mostrado en PowerShell[m
+[32m+[m[32m(ResourceGroupNotFound) Resource group 'rg-cloud-journey-prod-001' could not be found.[m
+[32m+[m[32mCode: ResourceGroupNotFound[m
+[32m+[m[32mMessage: Resource group 'rg-cloud-journey-prod-001' could not be found.[m
+[32m+[m
+[32m+[m[32m***[m
+[32m+[m[32mPara resolverlo se ejecutó un comando para mostrar la lista de grupos de recursos existentes, se demostró que el recurso no existe.[m
+[32m+[m
+[32m+[m[32maz group exists --name rg-cloudjourney-prod-001[m
+ [m
+ ## Lessons learned[m
+ [m
