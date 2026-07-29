@@ -66,4 +66,4 @@ Write five short sentences about the lab.
 2. I want to make a real project, buy I think that I have to learn more before.
 3. I am looking for a new job in the Cloud or TI department.
 4. I am thinking to be for the AZ104 Azure certification in 10 months.
-5. I am more confortable with the CLI.
+5. I am more comfortable with the CLI.
