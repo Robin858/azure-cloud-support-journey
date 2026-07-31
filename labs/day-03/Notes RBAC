@@ -1,0 +1,6 @@
+| Rol         | Leer recursos | Modificar recursos | Eliminar recursos | Administrar acceso |
+| ----------- | ------------: | -----------------: | ----------------: | -----------------: |
+| Reader      |            Sí |                 No |                No |                 No |
+| Contributor |            Sí |                 Sí |                Sí |                 No |
+| Owner       |            Sí |                 Sí |                Sí |                 Sí |
+
